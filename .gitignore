@@ -178,3 +178,5 @@ nuget.exe
 
 # dotnet local cache
 .dotnet
+/Ix.NET/Source/NuGet.Config
+/Rx.NET/Source/NuGet.Config
