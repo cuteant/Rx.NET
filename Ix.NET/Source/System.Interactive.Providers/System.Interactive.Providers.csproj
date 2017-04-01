@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>System.Interactive.Providers</PackageId>
+    <PackageId>System.Interactive.Providers.Unofficial</PackageId>
     <Title>Interactive Extensions - Providers Library</Title>
     <Description>Interactive Extensions Providers Library used to build query providers and express queries over enumerable sequences.</Description>
     <PackageTags>Ix;Interactive;Extensions;Enumerable</PackageTags>
