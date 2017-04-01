@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Reactive Extensions test project.</Description>
+    <Copyright>Copyright (C) Microsoft Corporation</Copyright>
+    <AssemblyTitle>Reactive Extensions - Tests</AssemblyTitle>
+    <VersionPrefix>3.0.0</VersionPrefix>
+    <Authors>Microsoft</Authors>
+    <TargetFrameworks>netcoreapp1.0;net461</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);SIGNED</DefineConstants>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+    <AssemblyName>Tests.System.Reactive</AssemblyName>
+    <AssemblyOriginatorKeyFile>../ReactiveX.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Tests.System.Reactive</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</PackageIconUrl>
+    <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=261273</PackageProjectUrl>
+    <PackageLicenseUrl>http://go.microsoft.com/fwlink/?LinkID=261272</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">1.0.4</RuntimeFrameworkVersion>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\System.Reactive.Interfaces\System.Reactive.Interfaces.csproj" />
+    <ProjectReference Include="..\System.Reactive.Linq\System.Reactive.Linq.csproj" />
+    <ProjectReference Include="..\System.Reactive.PlatformServices\System.Reactive.PlatformServices.csproj" />
+    <ProjectReference Include="..\Microsoft.Reactive.Testing\Microsoft.Reactive.Testing.csproj" />
+    <ProjectReference Include="..\System.Reactive.Experimental\System.Reactive.Experimental.csproj" />
+    <ProjectReference Include="..\System.Reactive.Providers\System.Reactive.Providers.csproj" />
+    <ProjectReference Include="..\System.Reactive.Observable.Aliases\System.Reactive.Observable.Aliases.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <ProjectReference Include="..\System.Reactive.Windows.Threading\System.Reactive.Windows.Threading.csproj" />
+    <ProjectReference Include="..\System.Reactive.Windows.Forms\System.Reactive.Windows.Forms.csproj" />
+    <ProjectReference Include="..\System.Reactive.Runtime.Remoting\System.Reactive.Runtime.Remoting.csproj" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0-preview-20170106-08" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0-beta5-build1225" />
+    <PackageReference Include="xunit" Version="2.2.0-beta5-build3474" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
+    <PackageReference Include="System.Diagnostics.StackTrace" Version="4.0.1" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+    <DefineConstants>$(DefineConstants);NO_EVENTARGS_CONSTRAINT;HAS_EDI;HAS_WINRT;HAS_PROGRESS;PREFER_ASYNC;HAS_AWAIT;HAS_APTCA;NO_REMOTING;NO_SERIALIZABLE;CRIPPLED_REFLECTION;PLIB;USE_TIMER_SELF_ROOT;XUNIT</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <DefineConstants>$(DefineConstants);DESKTOPCLR;DESKTOPCLR46</DefineConstants>
+  </PropertyGroup>
+
+</Project>
