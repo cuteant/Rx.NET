@@ -1,0 +1,24 @@
+<!-- This file may be overwritten by automation. Only values allowed here are VersionPrefix and VersionSuffix.  -->
+<Project>
+  <Import Project="version.props" />
+  <Import Project="define.props" />
+
+  <PropertyGroup>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>../ReactiveX.snk</AssemblyOriginatorKeyFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="NuGet">
+    <IsPackable>true</IsPackable>
+    <Authors>.NET Foundation and Contributors,Seabiscuit</Authors>
+    <Copyright>Copyright (c) .NET Foundation and Contributors., Seabiscuit</Copyright>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</PackageIconUrl>
+    <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=261273</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Reactive-Extensions/Rx.NET/master/Ix.NET/Source/license.txt</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Reactive-Extensions/Rx.NET</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+</Project>
