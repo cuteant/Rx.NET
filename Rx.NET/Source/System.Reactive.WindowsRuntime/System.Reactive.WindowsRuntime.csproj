@@ -1,79 +1,50 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="..\Build\common.props" />
+  
   <PropertyGroup>
-    <Description>Windows Forms extensions library for Rx. Contains scheduler functionality for the Windows Forms UI loop.</Description>
-    <Copyright>Copyright (C) Microsoft Corporation</Copyright>
-    <AssemblyTitle>Reactive Extensions - Windows Forms Helpers</AssemblyTitle>
-    <VersionPrefix>3.0.0</VersionPrefix>
-    <Authors>Microsoft</Authors>
-    <TargetFrameworks>wpa81;netcore451;uap10.0</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);SIGNED</DefineConstants>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFrameworks>net461;net451</TargetFrameworks>
+    <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.WindowsRuntime</AssemblyName>
-    <AssemblyOriginatorKeyFile>../ReactiveX.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
-    <PackageId>System.Reactive.WindowsRuntime</PackageId>
-    <PackageTags>Rx;Reactive;Extensions;Observable;LINQ;Events</PackageTags>
-    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</PackageIconUrl>
-    <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=261273</PackageProjectUrl>
-    <PackageLicenseUrl>http://go.microsoft.com/fwlink/?LinkID=261272</PackageLicenseUrl>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'uap10.0' ">$(PackageTargetFallback);dotnet5.4</PackageTargetFallback>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <RootNamespace>System.Reactive</RootNamespace>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\GlobalAssemblyVersion.cs" />
+  <PropertyGroup Label="NuGet">
+    <PackageId>System.Reactive.WindowsRuntime.Unofficial</PackageId>
+    <Title>Reactive Extensions - Windows Runtime Helpers</Title>
+    <Description>Windows Runtime extensions library for Rx. Contains scheduler functionality and various bridges for the Windows Runtime.</Description>
+    <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Build\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
+    <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
+    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
+    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\System.Reactive.Linq\System.Reactive.Linq.csproj" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'wpa81' ">
-    <PackageReference Include="Microsoft.TargetingPack.Private.WinRT" Version="1.0.1">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.TargetingPack.Private.WindowsPhone.v8.1" Version="1.0.1">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcore451' ">
-    <PackageReference Include="Microsoft.TargetingPack.Private.WinRT" Version="1.0.1">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.TargetingPack.Private.NETCore.v4.5.1" Version="1.0.0">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'wpa81' ">
-    <DefineConstants>$(DefineConstants);NO_EVENTARGS_CONSTRAINT;HAS_EDI;HAS_WINRT;HAS_PROGRESS;PREFER_ASYNC;HAS_AWAIT;NO_REMOTING;NO_SERIALIZABLE;NO_THREAD;CRIPPLED_REFLECTION;USE_TIMER_SELF_ROOT;WINDOWS;WINDOWS81</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-    <DefineConstants>$(DefineConstants);HAS_APTCA;HAS_TPL46</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-    <PackageReference Include="Microsoft.TargetingPack.Private.WinRT" Version="1.0.1">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="5.2.0">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
 </Project>

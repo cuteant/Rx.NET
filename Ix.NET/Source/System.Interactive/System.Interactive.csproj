@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;net40;netstandard1.4;netstandard1.1</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Interactive</AssemblyName>
     <RootNamespace>System.Interactive</RootNamespace>
