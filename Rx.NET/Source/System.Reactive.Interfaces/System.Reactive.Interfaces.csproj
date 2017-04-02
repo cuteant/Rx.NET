@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.Interfaces</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.Interfaces.Unofficial</PackageId>
-    <Title>Reactive Extensions - Interfaces Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Interfaces Library</Title>
     <Description>Reactive Extensions Interfaces Library containing essential interfaces.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -36,11 +36,5 @@
     <Compile Include="..\Build\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
     <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.Runtime.Remoting</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.Runtime.Remoting.Unofficial</PackageId>
-    <Title>Reactive Extensions - .NET Remoting Support</Title>
+    <Title>Reactive Extensions (Unofficial) - .NET Remoting Support</Title>
     <Description>Reactive Extensions (Rx) Remoting Library used to expose observable sequences through .NET Remoting.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -37,12 +37,6 @@
     <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
     <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
     <EmbeddedResource Include="Properties\System.Reactive.Runtime.Remoting.rd.xml" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
   </ItemGroup>
   
   <ItemGroup>

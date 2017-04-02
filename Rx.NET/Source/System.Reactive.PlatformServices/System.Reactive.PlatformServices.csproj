@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" Label="Shared" />
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;netstandard1.4;netcoreapp1.0</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4;netcoreapp1.0</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.PlatformServices</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +13,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.PlatformServices.Unofficial</PackageId>
-    <Title>Reactive Extensions - Platform Services Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Platform Services Library</Title>
     <Description>Reactive Extensions Platform Services Library used to access platform-specific functionality and enlightenment services.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -37,12 +38,6 @@
     <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
     <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
     <EmbeddedResource Include="Properties\System.Reactive.PlatformServices.rd.xml" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
   </ItemGroup>
   
   <ItemGroup>

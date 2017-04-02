@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Interactive.Unofficial</PackageId>
-    <Title>Interactive Extensions - Main Library</Title>
+    <Title>Interactive Extensions (Unofficial) - Main Library</Title>
     <Description>Interactive Extensions Main Library used to express queries over enumerable sequences.</Description>
     <PackageTags>Ix;Interactive;Extensions;Enumerable</PackageTags>
   </PropertyGroup>

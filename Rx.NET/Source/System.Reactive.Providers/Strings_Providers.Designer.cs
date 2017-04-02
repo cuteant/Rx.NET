@@ -23,14 +23,14 @@ namespace System.Reactive {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings_PlatformServices {
+    internal class Strings_Providers {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Strings_PlatformServices() {
+        internal Strings_Providers() {
         }
         
         /// <summary>
@@ -41,9 +41,9 @@ namespace System.Reactive {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
 #if NET40
-          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_PlatformServices", typeof(Strings_PlatformServices).Assembly);
+          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_Providers", typeof(Strings_Providers).Assembly);
 #else
-          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_PlatformServices", typeof(Strings_PlatformServices).GetTypeInfo().Assembly);
+          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_Providers", typeof(Strings_Providers).GetTypeInfo().Assembly);
 #endif
           resourceMan = temp;
                 }
@@ -66,11 +66,29 @@ namespace System.Reactive {
         }
         
         /// <summary>
-        ///   查找类似 The WinRT thread pool doesn&apos;t support creating periodic timers with a period below 1 millisecond. 的本地化字符串。
+        ///   查找类似 Expected Qbservable.ToQueryable. 的本地化字符串。
         /// </summary>
-        internal static string WINRT_NO_SUB1MS_TIMERS {
+        internal static string EXPECTED_TOQUERYABLE_METHODCALL {
             get {
-                return ResourceManager.GetString("WINRT_NO_SUB1MS_TIMERS", resourceCulture);
+                return ResourceManager.GetString("EXPECTED_TOQUERYABLE_METHODCALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid expression tree type. 的本地化字符串。
+        /// </summary>
+        internal static string INVALID_TREE_TYPE {
+            get {
+                return ResourceManager.GetString("INVALID_TREE_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 There is no method &apos;{0}&apos; on type &apos;{1}&apos; that matches the specified arguments. 的本地化字符串。
+        /// </summary>
+        internal static string NO_MATCHING_METHOD_FOUND {
+            get {
+                return ResourceManager.GetString("NO_MATCHING_METHOD_FOUND", resourceCulture);
             }
         }
     }

@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.Linq</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.Linq.Unofficial</PackageId>
-    <Title>Reactive Extensions - Query Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Query Library</Title>
     <Description>Reactive Extensions Query Library used to express complex event processing queries over observable sequences.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -47,13 +47,47 @@
     <PackageReference Include="System.Runtime.InteropServices.WindowsRuntime" Version="4.0.1" />
   </ItemGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
+  <ItemGroup>
+    <ProjectReference Include="..\System.Reactive.Core\System.Reactive.Core.csproj" />
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\System.Reactive.Core\System.Reactive.Core.csproj" />
+    <None Update="Reactive\Linq\Observable\CombineLatest.Generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CombineLatest.Generated.cs</LastGenOutput>
+    </None>
+    <None Update="Reactive\Linq\Observable\Zip.Generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Zip.Generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Reactive\Linq\Observable\CombineLatest.Generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CombineLatest.Generated.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Reactive\Linq\Observable\Zip.Generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Zip.Generated.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Strings_Linq.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings_Linq.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Strings_Linq.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings_Linq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.Experimental</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.Experimental.Unofficial</PackageId>
-    <Title>Reactive Extensions - Experimental Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Experimental Library</Title>
     <Description>Reactive Extensions Experimental Library containing unstable and infrequently used functionality.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -37,12 +37,6 @@
     <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
     <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
     <EmbeddedResource Include="Properties\System.Reactive.Experimental.rd.xml" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
   </ItemGroup>
   
   <ItemGroup>

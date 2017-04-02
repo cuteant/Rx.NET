@@ -13,7 +13,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Interactive.Async.Unofficial</PackageId>
-    <Title>Interactive Extensions - Async Library</Title>
+    <Title>Interactive Extensions (Unofficial) - Async Library</Title>
     <Description>Interactive Extensions Async Library used to express queries over asynchronous enumerable sequences.</Description>
     <PackageTags>Ix;Interactive;Extensions;Enumerable;Asynchronous</PackageTags>
   </PropertyGroup>

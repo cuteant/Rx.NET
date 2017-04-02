@@ -2,7 +2,7 @@
   <Import Project="..\Build\common.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net461;net451;netstandard1.4</TargetFrameworks>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.Providers</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.Providers.Unofficial</PackageId>
-    <Title>Reactive Extensions (Rx) - Providers Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Providers Library</Title>
     <Description>Reactive Extensions (Rx) Providers Library used to build query providers and express complex event processing queries over those.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -43,13 +43,22 @@
     <PackageReference Include="System.Linq.Queryable" Version="4.0.1" />
   </ItemGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
+  <ItemGroup>
+    <ProjectReference Include="..\System.Reactive.Linq\System.Reactive.Linq.csproj" />
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\System.Reactive.Linq\System.Reactive.Linq.csproj" />
+    <Compile Update="Strings_Providers.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings_Providers.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Strings_Providers.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings_Providers.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

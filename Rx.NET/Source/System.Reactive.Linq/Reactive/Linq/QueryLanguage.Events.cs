@@ -8,7 +8,7 @@ using System.Reactive.Disposables;
 using System.Reflection;
 using System.Threading;
 
-#if HAS_WINRT
+#if HAS_WINRT && !NET40
 using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 

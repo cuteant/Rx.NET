@@ -23,14 +23,14 @@ namespace System.Reactive {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings_PlatformServices {
+    internal class Strings_WindowsThreading {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Strings_PlatformServices() {
+        internal Strings_WindowsThreading() {
         }
         
         /// <summary>
@@ -41,9 +41,9 @@ namespace System.Reactive {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
 #if NET40
-          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_PlatformServices", typeof(Strings_PlatformServices).Assembly);
+          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_WindowsThreading", typeof(Strings_WindowsThreading).Assembly);
 #else
-          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_PlatformServices", typeof(Strings_PlatformServices).GetTypeInfo().Assembly);
+          global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System.Reactive.Strings_WindowsThreading", typeof(Strings_WindowsThreading).GetTypeInfo().Assembly);
 #endif
           resourceMan = temp;
                 }
@@ -66,11 +66,20 @@ namespace System.Reactive {
         }
         
         /// <summary>
-        ///   查找类似 The WinRT thread pool doesn&apos;t support creating periodic timers with a period below 1 millisecond. 的本地化字符串。
+        ///   查找类似 The current thread has no Dispatcher associated with it. 的本地化字符串。
         /// </summary>
-        internal static string WINRT_NO_SUB1MS_TIMERS {
+        internal static string NO_DISPATCHER_CURRENT_THREAD {
             get {
-                return ResourceManager.GetString("WINRT_NO_SUB1MS_TIMERS", resourceCulture);
+                return ResourceManager.GetString("NO_DISPATCHER_CURRENT_THREAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No current Window object found to obtain a CoreDispatcher from. 的本地化字符串。
+        /// </summary>
+        internal static string NO_WINDOW_CURRENT {
+            get {
+                return ResourceManager.GetString("NO_WINDOW_CURRENT", resourceCulture);
             }
         }
     }

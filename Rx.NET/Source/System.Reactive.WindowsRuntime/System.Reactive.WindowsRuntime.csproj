@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Reactive.WindowsRuntime.Unofficial</PackageId>
-    <Title>Reactive Extensions - Windows Runtime Helpers</Title>
+    <Title>Reactive Extensions (Unofficial) - Windows Runtime Helpers</Title>
     <Description>Windows Runtime extensions library for Rx. Contains scheduler functionality and various bridges for the Windows Runtime.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>
@@ -36,12 +36,6 @@
     <Compile Include="..\Build\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="..\Build\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
     <Compile Include="..\Build\versionInfo.cs" Link="Properties\versionInfo.cs" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
-    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
   </ItemGroup>
   
   <ItemGroup>

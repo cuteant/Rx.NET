@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>System.Interactive.Async.Providers.Unofficial</PackageId>
-    <Title>Interactive Extensions - Async Providers Library</Title>
+    <Title>Interactive Extensions (Unofficial) - Async Providers Library</Title>
     <Description>Interactive Extensions Async Providers Library used to build query providers and express queries over async enumerable sequences.</Description>
     <PackageTags>Ix;Interactive;Extensions;Enumerable;Asynchronous</PackageTags>
   </PropertyGroup>

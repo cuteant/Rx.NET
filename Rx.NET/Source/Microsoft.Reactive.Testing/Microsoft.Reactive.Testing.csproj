@@ -12,7 +12,7 @@
 
   <PropertyGroup Label="NuGet">
     <PackageId>Microsoft.Reactive.Testing.Unofficial</PackageId>
-    <Title>Reactive Extensions (Rx) - Testing Library</Title>
+    <Title>Reactive Extensions (Unofficial) - Testing Library</Title>
     <Description>Testing library for Rx. Contains code to help test Rx operators.</Description>
     <PackageTags>Rx Reactive Extensions Observable LINQ Events</PackageTags>
   </PropertyGroup>

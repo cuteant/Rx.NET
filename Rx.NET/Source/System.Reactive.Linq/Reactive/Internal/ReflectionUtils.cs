@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 
-#if HAS_WINRT
+#if HAS_WINRT && !NET40
 using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 
@@ -71,7 +71,7 @@ namespace System.Reactive
 
             isWinRT = false;
 
-#if HAS_WINRT
+#if HAS_WINRT && !NET40
             if (addMethod.ReturnType == typeof(EventRegistrationToken))
             {
                 isWinRT = true;
