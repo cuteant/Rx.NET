@@ -1,20 +1,12 @@
 <!-- This file may be overwritten by automation. Only values allowed here are VersionPrefix and VersionSuffix.  -->
 <Project>
   <PropertyGroup>
+    <PlatformTarget>anycpu</PlatformTarget>
     <DefineConstants>$(DefineConstants);NET_3_5_GREATER;SIGNED</DefineConstants>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyDescriptionAttribute>true</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyCompanyAttribute>true</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
-    <GenerateNeutralResourcesLanguageAttribute>true</GenerateNeutralResourcesLanguageAttribute>
-    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>true</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>true</GenerateAssemblyInformationalVersionAttribute>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.1'">
@@ -50,6 +42,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net451|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -73,6 +79,36 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
     <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.6|AnyCPU'">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.6|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.5|AnyCPU'">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.5|AnyCPU'">
+    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

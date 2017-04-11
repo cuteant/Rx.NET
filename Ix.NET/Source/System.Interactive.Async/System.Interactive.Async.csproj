@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" Label="Shared" />
-  <Import Project="..\Build\common.props" />
+  <Import Project="..\Build\version.props" />
   
   <PropertyGroup>
     <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
-    <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Interactive.Async</AssemblyName>
     <RootNamespace>System.Interactive</RootNamespace>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 

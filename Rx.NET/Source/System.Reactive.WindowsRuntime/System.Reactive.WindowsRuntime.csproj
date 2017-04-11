@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\Build\common.props" />
+  <Import Project="..\Build\version.props" />
   
   <PropertyGroup>
     <TargetFrameworks>net461;net451</TargetFrameworks>
-    <PlatformTarget>anycpu</PlatformTarget>
     <AssemblyName>System.Reactive.WindowsRuntime</AssemblyName>
     <RootNamespace>System.Reactive</RootNamespace>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
