@@ -11,11 +11,11 @@
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.1'">
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <DefineConstants>$(DefineConstants);NETSTANDARD;NET_4_0_GREATER;NO_EVENTARGS_CONSTRAINT;HAS_EDI;HAS_WINRT;HAS_PROGRESS;PREFER_ASYNC;HAS_AWAIT;NO_REMOTING;NO_SERIALIZABLE;NO_THREAD;CRIPPLED_REFLECTION;NO_CDS_COLLECTIONS;USE_TIMER_SELF_ROOT;PLIB</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <DefineConstants>$(DefineConstants);NETSTANDARD;NET_4_0_GREATER;NET_4_5_GREATER;NO_EVENTARGS_CONSTRAINT;HAS_EDI;HAS_WINRT;HAS_PROGRESS;PREFER_ASYNC;HAS_AWAIT;NO_REMOTING;NO_SERIALIZABLE;NO_THREAD;CRIPPLED_REFLECTION;USE_TIMER_SELF_ROOT;HAS_TPL46;PLIB</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp1.0' or '$(TargetFramework)' == 'netcoreapp1.1'">

@@ -11,11 +11,11 @@
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.1'">
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <DefineConstants>$(DefineConstants);NETSTANDARD;NET_4_0_GREATER;NO_ARRAY_EMPTY;NO_CODE_COVERAGE_ATTRIBUTE;CRIPPLED_REFLECTION;PLIB</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <DefineConstants>$(DefineConstants);NETSTANDARD;NET_4_0_GREATER;NET_4_5_GREATER;NO_CODE_COVERAGE_ATTRIBUTE;CRIPPLED_REFLECTION;PLIB</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net40'">
