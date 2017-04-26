@@ -7,8 +7,8 @@
   
   <PropertyGroup Label="NuGet">
     <IsPackable>true</IsPackable>
-    <Authors>.NET Foundation and Contributors,Seabiscuit</Authors>
-    <Copyright>Copyright (c) .NET Foundation and Contributors., Seabiscuit</Copyright>
+    <Authors>.NET Foundation and Contributors</Authors>
+    <Copyright>Copyright (c) .NET Foundation and Contributors.</Copyright>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</PackageIconUrl>
     <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=261273</PackageProjectUrl>
